@@ -32,3 +32,13 @@ services:
 ```
 
 This allows prometheus to scrape the metrics via inter-container communication on the default port `9813`.
+
+### Prometheus scrape usage
+
+```
+scrape_configs:
+  - job_name: 'powerfox-exporter'
+    scrape_interval: 60s
+    static_configs:
+      - targets: ['powerfox-exporter:9813']
+```
