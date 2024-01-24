@@ -4,6 +4,8 @@
 
 Service to scrape [powerfox](https://www.powerfox.energy/) metrics and to export them for prometheus.
 
+![Screenshot of the powerfox grafana dashboard](https://grafana.com/api/dashboards/20350/images/15493/image)
+
 ## Configuration
 
 Environment variables:
