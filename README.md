@@ -18,7 +18,7 @@ Environment variables:
 
 ### Docker Compose
 
-```
+```yaml
 version: '3.8'
 
 services:
@@ -35,7 +35,7 @@ This allows prometheus to scrape the metrics via inter-container communication o
 
 ### Prometheus scrape usage
 
-```
+```yaml
 scrape_configs:
   - job_name: 'powerfox-exporter'
     scrape_interval: 60s
