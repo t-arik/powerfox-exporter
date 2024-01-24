@@ -42,3 +42,7 @@ scrape_configs:
     static_configs:
       - targets: ['powerfox-exporter:9813']
 ```
+
+### Grafana
+
+I have created an example grafana [dashboard](https://grafana.com/grafana/dashboards/20350-powerfox/) for this exporter, feel free to use it.
