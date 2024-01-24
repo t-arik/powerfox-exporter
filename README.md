@@ -1,5 +1,7 @@
 # Powerfox Exporter
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/martinlowinski/powerfox-exporter.svg?maxAge=604800)][hub]
+
 Service to scrape [powerfox](https://www.powerfox.energy/) metrics and to export them for prometheus.
 
 ## Configuration
