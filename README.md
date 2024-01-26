@@ -25,7 +25,7 @@ version: '3.8'
 
 services:
   powerfox-exporter:
-    image: powerfox-exporter:latest
+    image: martinlowinski/powerfox-exporter:latest
     restart: always
     environment:
       - POWERFOX_API_USER=username
