@@ -20,6 +20,8 @@ Environment variables:
 
 ### Docker Compose
 
+Docker images are automatically build for various architectures and pushed to [Docker Hub](https://hub.docker.com/r/martinlowinski/powerfox-exporter).
+
 ```yaml
 version: '3.8'
 
