@@ -2,7 +2,7 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/martinlowinski/powerfox-exporter)
 
-Service to scrape [powerfox](https://www.powerfox.energy/) metrics and to export them for prometheus.
+Service to scrape [powerfox](https://www.powerfox.energy/?utm_source=github&utm_campaign=exporter) metrics and to export them for prometheus.
 
 ![Screenshot of the powerfox grafana dashboard](https://grafana.com/api/dashboards/20350/images/15494/image)
 
