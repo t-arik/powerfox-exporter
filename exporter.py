@@ -83,9 +83,16 @@ class AppMetrics:
             self.powerfox_user,
             self.powerfox_password
         )
-        r = requests.get(url, auth=auth)
-        if r.status_code != requests.codes.ok:
-            logging.error("Failed to connect to API")
+        try:
+            r = requests.get(url, auth=auth)
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as errh:
+            logging.error("HTTP error:", errh)
+            if r.status_code == requests.codes.too_many_requests:
+                logging.warn("Consider increasing the polling interval.")
+            return None
+        except requests.exceptions.RequestException as err:
+            logging.error("Request failed:", err)
             return None
 
         current = r.json()
