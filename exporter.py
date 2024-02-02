@@ -122,7 +122,7 @@ def main():
     powerfox_password = os.getenv("POWERFOX_API_PASSWORD", "")
     powerfox_device = os.getenv("POWERFOX_DEVICE", "")
     loglevel = os.environ.get('LOGLEVEL', 'INFO').upper()
-    logging.basicConfig(level=loglevel)
+    logging.basicConfig(level=loglevel, format='%(asctime)s - %(levelname)s - %(message)s')
 
     app_metrics = AppMetrics(
         polling_interval_seconds=polling_interval_seconds,
