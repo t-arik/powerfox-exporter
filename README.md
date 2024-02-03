@@ -12,6 +12,7 @@ Environment variables:
 
 - `POLLING_INTERVAL_SECONDS`, the default is 60
 - `EXPORTER_PORT`, the port where `/metrics` is exported, default is 9813
+- `LOGLEVEL`, sets the threshold for the logging, default is `INFO`
 - `POWERFOX_API_USER` as part of the powerfox credentials
 - `POWERFOX_API_PASSWORD` as part of the powerfox credentials
 - `POWERFOX_DEVICE`, the ID of the poweropti
