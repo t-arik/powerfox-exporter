@@ -51,3 +51,14 @@ scrape_configs:
 ### Grafana
 
 I have created an example grafana [dashboard](https://grafana.com/grafana/dashboards/20350-powerfox/) for this exporter, feel free to use it.
+
+## Collectors
+
+The prometheus exporter collects the following metrics:
+
+| Name                          | Description                       |
+|-------------------------------|-----------------------------------|
+| `powerfox_device_consumption` | Device consumption reading in kWh |
+| `powerfox_device_feedin`      | Device feedin reading in kWh      |
+| `powerfox_device_power`       | Device current power in W         |
+| `powerfox_device_outdated`    | Device data is currently outdated |
