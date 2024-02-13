@@ -85,11 +85,12 @@ class AppMetrics:
         )
         try:
             r = requests.get(url, auth=auth)
+            logging.info(f"Fetch response: {r}")
             r.raise_for_status()
         except requests.exceptions.HTTPError as errh:
             logging.error("HTTP error:", errh)
             if r.status_code == requests.codes.too_many_requests:
-                logging.warn("Consider increasing the polling interval.")
+                logging.warn("Consider decreasing the polling interval.")
             return None
         except requests.exceptions.RequestException as err:
             logging.error("Request failed:", err)
@@ -117,7 +118,7 @@ class AppMetrics:
 def main():
     exporter_port = int(os.getenv("EXPORTER_PORT", "9813"))
     # Attention: The powerfox API is rate limited
-    polling_interval_seconds = int(os.getenv("POLLING_INTERVAL_SECONDS", "60"))
+    polling_interval_seconds = int(os.getenv("POLLING_INTERVAL_SECONDS", "10"))
     powerfox_user = os.getenv("POWERFOX_API_USER", "")
     powerfox_password = os.getenv("POWERFOX_API_PASSWORD", "")
     powerfox_device = os.getenv("POWERFOX_DEVICE", "")
@@ -131,6 +132,7 @@ def main():
         powerfox_device=powerfox_device,
     )
     start_http_server(exporter_port)
+    logging.info(f"Started exporter on port {exporter_port}")
     app_metrics.run_metrics_loop()
 
 
